@@ -4,7 +4,7 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.3
 
 commands:
-   # Exercise - Rollback
+  # Exercise - Rollback
   destroy_environment:
     steps:
       - run:
@@ -47,7 +47,7 @@ jobs:
             ansible-playbook -i inventory.txt main.yml
   smoke_test:
     docker:
-      - image: alpine:latest
+      - image: cimg/base:stable
     steps:
       - run:
           name: Test job
