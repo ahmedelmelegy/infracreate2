@@ -33,8 +33,12 @@ jobs:
           name: Configure server
           command: |
             ansible-playbook -i inventory.txt main.yml
+  
+  
 workflows:
   myWorkflow:
     jobs:
-      ##- create_infrastructure
-      - configure_infrastructure
+      - create_infrastructure
+      - configure_infrastructure:
+          requires:
+            - create_infrastructure
