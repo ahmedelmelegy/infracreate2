@@ -47,7 +47,7 @@ jobs:
             ansible-playbook -i inventory.txt main.yml
   smoke_test:
     docker:
-      - image: alpine:3.13
+      - image: cimg/base:stable
     steps:
       - run:
           name: Test job
